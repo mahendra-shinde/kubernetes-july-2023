@@ -17,7 +17,7 @@ spec:
   - name: c1
     image: <IMAGENAME>
     ports:
-	- containerPort: XX
+    - containerPort: XX
 ```
 
 1.	Deploy the sample pod from YAML
