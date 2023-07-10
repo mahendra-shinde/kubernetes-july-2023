@@ -17,3 +17,11 @@ Kubernetes Developer Training
 
 1. Open a NEW Command prompt or Powershell and try command `kubectl version --short`
 
+1. Download the file k8s.config and copy it to %USERPROFILE%\.kube\config
+
+	```CMD
+	mkdir .kube
+	cd downloads
+	copy k8s.config ..\.kube\config
+	```
+	
