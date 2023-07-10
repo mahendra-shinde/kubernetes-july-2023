@@ -24,4 +24,10 @@ Kubernetes Developer Training
 	cd downloads
 	copy k8s.config ..\.kube\config
 	```
+
+1.	Test the config using following command:
+
+	```
+	kubectl cluster-info
+	```
 	
