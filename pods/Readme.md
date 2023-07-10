@@ -32,3 +32,46 @@ spec:
 	# Get the pod status and details
 	$ kubectl describe pod pod1
 	```
+
+1. Quality of Service 
+	1. Burstable:	Minimum CPU and Memory set, No Upper limit
+
+	```
+	resources:
+      requests:
+        memory: "64Mi"
+        cpu: "100m"
+	```
+
+	2. Guaranteed:  No Minimum but Limit is Set (Request = Limit)
+
+	 resources:
+      limits:
+        memory: "64Mi"
+        cpu: "100m"
+
+	3. BestEffort:  No Minimum and Maximum limit set.
+
+1. Debugging pods / containers
+
+	```
+	$ kubectl exec -t pod1 -- cat /etc/os-release
+	$ kubectl exec -it pod1 -- sh
+	$ apk add curl
+	$ curl http://localhost
+	$ curl http://localhost
+	$ curl http://localhost/page1
+	$ curl http://localhost/page2
+	$ exit
+	```
+
+	> For multi-container pod, exec need extra parameter
+	`kubectl exec -it pod1 -c web -- sh`
+
+1. View the logs
+
+	```
+	$ kubectl logs pod1
+	```
+
+
