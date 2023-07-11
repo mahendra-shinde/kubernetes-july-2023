@@ -4,9 +4,10 @@ metadata:
   name: app2
 spec:
   replicas: 3
+  minReadySeconds: 5  # Each POD takes 5 seconds to initialize properly
   strategy: 
     rollingUpdate:
-      maxSurge: 1       # Allow creating ONE new pod
+      maxSurge: 2       # Allow creating ONE new pod
       maxUnavailable: 1 # Allow DELETE ONE pod at a time
   selector:
     matchLabels:
