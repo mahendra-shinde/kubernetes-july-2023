@@ -4,6 +4,10 @@ Group of pods with `Self Healing` and scalability. ReplicaSet has "podTemplate" 
 
 ReplicaSet Controller manages replicaset and maintains the "Desired" count equals to "Current"
 
+1. Download the sample [replicaset](https://raw.githubusercontent.com/mahendra-shinde/kubernetes-july-2023/main/replicaset/myapp.yaml)
+
+
+
 1. Deploy the replicaset
 
 	```
