@@ -5,13 +5,14 @@
 1. Strategy could be either "Recreate" or "Rolling Update"
 
 1. Recreate:  
-	i. Stop and Delete one pod at a time (old replicaset)
-	ii. Once ALL the pods are deleted, start creating new pods
+	1. Stop and Delete one pod at a time (old replicaset)
+
+	1. Once ALL the pods are deleted, start creating new pods
 
 1. Rolling Update:
-	i. Delete ONE old pod and REPLACE with ONE new pod.
-	ii Repeat till all old pods are replaced with NEW ones.
-	iii. Number of instances / pod to delete and create is configurable.
+	1. Delete ONE old pod and REPLACE with ONE new pod.
+	1. Repeat till all old pods are replaced with NEW ones.
+	1. Number of instances / pod to delete and create is configurable.
 
 ## Recreate demo
 
