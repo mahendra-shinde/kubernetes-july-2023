@@ -36,3 +36,28 @@ CTRL+C
 $ kubectl rollout history deploy/app1
 $ kubectl delete -f deploy.yml
 ```
+
+## Rolling Update Demo
+
+> Kindly DELETE the previous deployment object app1 before you proceed with this demo !
+
+```
+$ kubectl apply -f deploy2.yml
+$ kubectl get rs,deploy,pod 
+# Update image version from 1 to 2
+$ kubectl set image deploy/app2 app2=mahendrshinde/myweb:2 --record
+$ kubectl get rs -o wide -w
+## Wait for new replicaset to be created
+CTRL+C
+$ kubectl set image deploy/app2 app2=mahendrshinde/myweb:3 --record
+$ kubectl get rs -o wide -w
+## Wait for new replicaset to be created
+CTRL+C
+$ kubectl rollout history deploy/app2
+$ kubectl rollout undo deploy/app2
+$ kubectl get rs -o wide -w
+## Wait for new replicaset to be created
+CTRL+C
+$ kubectl rollout history deploy/app2
+$ kubectl delete -f deploy2.yml
+```

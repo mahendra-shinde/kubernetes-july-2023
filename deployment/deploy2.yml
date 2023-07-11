@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app2
+spec:
+  replicas: 3
+  strategy: 
+    rollingUpdate:
+      maxSurge: 1       # Allow creating ONE new pod
+      maxUnavailable: 1 # Allow DELETE ONE pod at a time
+  selector:
+    matchLabels:
+      app: app2
+  template:
+    metadata:
+      labels:
+        app: app2
+    spec:
+      containers:
+      - name: app2
+        image: mahendrshinde/myweb:1
+        resources:
+          limits:
+            memory: "64Mi"
+            cpu: "50m"
+        ports:
+        - containerPort: 80
