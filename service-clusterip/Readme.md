@@ -30,3 +30,21 @@ $ curl http://web1
 $ curl http://web1.mahendra
 exit
 ```
+
+## Load Balancer service
+
+1. Modify service1.yml, add "type: LoadBalancer" under "spec"
+1. Update the service
+
+	```
+	$ kubectl apply -f service1.yml
+	$ kubectl get svc
+	```
+
+1.	Open web browser and visit external ip displayed by service
+
+1. Delete the service 
+
+	```
+	$ kubectl delete -f service1.yml
+	```
